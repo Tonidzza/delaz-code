@@ -223,16 +223,91 @@ color:black;
 
 width:560px;
 
-border-radius:25px;
+border-radius:24px;
 
-box-shadow:0 40px 80px rgba(0,0,0,.5);
+border:1px solid rgba(255,255,255,.08);
 
-transition:.4s;
+box-shadow:
+0 40px 80px rgba(0,0,0,.6),
+0 0 80px rgba(37,99,235,.18);
+
+transition:.5s;
 
 }
+
 
 .hero-img img:hover{
 
 transform:scale(1.02);
+
+}
+/* ===========================
+   FUNDO PREMIUM
+=========================== */
+
+.background{
+    position:fixed;
+    inset:0;
+    z-index:-2;
+    background:
+        radial-gradient(circle at 20% 20%, rgba(37,99,235,.30), transparent 35%),
+        radial-gradient(circle at 80% 25%, rgba(99,102,241,.25), transparent 30%),
+        radial-gradient(circle at 50% 80%, rgba(14,165,233,.18), transparent 40%),
+        #050505;
+}
+
+.background::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background-image:
+        linear-gradient(rgba(255,255,255,.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.03) 1px, transparent 1px);
+    background-size:40px 40px;
+    mask-image:radial-gradient(circle, white 40%, transparent 90%);
+}
+/* ===========================
+   EFEITO DE LUZ
+=========================== */
+
+.background::after{
+
+content:"";
+
+position:absolute;
+
+width:600px;
+
+height:600px;
+
+background:#2563eb;
+
+border-radius:50%;
+
+filter:blur(220px);
+
+opacity:.18;
+
+top:-200px;
+
+right:-150px;
+
+animation:luz 10s ease-in-out infinite alternate;
+
+}
+
+@keyframes luz{
+
+0%{
+
+transform:translate(0,0);
+
+}
+
+100%{
+
+transform:translate(-120px,120px);
+
+}
 
 }
